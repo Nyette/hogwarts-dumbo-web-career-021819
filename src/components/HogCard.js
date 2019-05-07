@@ -1,4 +1,5 @@
 import React from 'react';
+import HogDetails from './HogDetails';
 
 const HogCard = (props) => {
 
@@ -12,6 +13,10 @@ const HogCard = (props) => {
     return url;
   }
 
+  const showDetails = () => {
+    return <HogDetails hog={props.hog} />
+  }
+
   return (
     <div className="ui eight wide column">
       <div className="ui card">
@@ -21,15 +26,11 @@ const HogCard = (props) => {
         </div>
 
         <div className="content">
-          <a className="header">{props.hog.name}</a>
+          <h3 className="header">{props.hog.name}</h3>
 
           <div className="description">
-            {props.hog.name} won a <b>{props['hog']['highest medal achieved']}</b> medal and specializes in <b>{props.hog.specialty.toLowerCase()}</b>
+            Learn more here!
           </div>
-        </div>
-
-        <div className="extra content">
-          <a><i className="tint icon"></i>{props.hog.greased === true ? 'Greased' : 'Not Greased'}</a>
         </div>
 
       </div>
